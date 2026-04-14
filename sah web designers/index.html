@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAH WEBSITE DESIGNERS | AI Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS VARIABLES - Updated for Dark Theme */
+        :root {
+            --primary-gold: #d4af37; 
+            --accent-color: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* NAVIGATION - Glassmorphism */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 50px; /* Adjust size as needed */
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* HERO SECTION */
+        #hero {
+            padding: 10rem 5% 8rem;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            position: relative;
+        }
+
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        #hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #hero p.tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, var(--primary-gold), #b8860b);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* SERVICES & CARDS */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 5rem 5%;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-10px);
+            background: #263349;
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 4rem 5%;
+            background: #070a13;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="SAH Logo" class="logo-img">
+            <span class="logo-text">SAH DESIGNERS</span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="fade-in">
+        <div class="hero-rating">
+            <i class="fa-solid fa-crown"></i> Premium AI Solutions
+        </div>
+        <h1>Elevate Your Digital Presence</h1>
+        <p class="tagline">Blending high-end aesthetics with intelligent AI technology to create websites that don't just look good—they perform.</p>
+        <a href="#contact" class="btn btn-gold">Start Your Project</a>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title fade-in">Expert Services</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>AI UI/UX Design</h3>
+                <p>Smart layouts generated and refined by AI for maximum user engagement.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Fast Performance</h3>
+                <p>Lightning-fast load times optimized for modern search engine algorithms.</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Secure Hosting</h3>
+                <p>Enterprise-grade security to keep your business and data protected.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 5rem 5%; text-align: center;">
+        <h2 class="section-title fade-in">Get In Touch</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Ready to build something legendary?</p>
+        <a href="mailto:dudekulaamanthanveer2727@gmail.com" class="btn btn-gold">Email Me Directly</a>
+    </section>
+
+    <footer>
+        <img src="logo.jpg" alt="SAH Logo" class="footer-logo">
+        <p style="color: var(--text-muted); margin-top: 1rem;">&copy; <span id="year"></span> SAH WEBSITE DESIGNERS.</p>
+        <div style="margin-top: 1rem; font-size: 1.5rem; color: var(--text-muted);">
+            <i class="fa-brands fa-linkedin" style="margin: 0 10px; cursor: pointer;"></i>
+            <i class="fa-brands fa-instagram" style="margin: 0 10px; cursor: pointer;"></i>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
